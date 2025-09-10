@@ -89,7 +89,7 @@ export default function Home() {
         document.getElementById('header').classList.remove('transparent')
         //add timeline for the hidden section
         //(used this approach to avoid glitches when scrolling too fast)
-      
+
 
       }
     })
@@ -189,54 +189,54 @@ export default function Home() {
           toggleActions: "play, reverse, play,reverse",
         }
       });
-      // Simple fade/slide animations for Prepa and Degree sections
-      gsap.from("#prepa > h1", {
-        autoAlpha: 0,
-        y: 60,
-        duration: 0.8,
-        ease: Power3.out,
-        scrollTrigger: {
-          trigger: "#prepa",
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        }
-      })
-      gsap.from("#prepa > p", {
-        autoAlpha: 0,
-        y: 60,
-        duration: 0.8,
-        delay: 0.2,
-        ease: Power3.out,
-        scrollTrigger: {
-          trigger: "#prepa",
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        }
-      })
-      // Degree section
-      gsap.from("#degree > h1", {
-        autoAlpha: 0,
-        y: 60,
-        duration: 0.8,
-        ease: Power3.out,
-        scrollTrigger: {
-          trigger: "#degree",
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        }
-      })
-      gsap.from("#degree > p", {
-        autoAlpha: 0,
-        y: 60,
-        duration: 0.8,
-        delay: 0.2,
-        ease: Power3.out,
-        scrollTrigger: {
-          trigger: "#degree",
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        }
-      })
+    // Simple fade/slide animations for Prepa and Degree sections
+    gsap.from("#prepa > h1", {
+      autoAlpha: 0,
+      y: 60,
+      duration: 0.8,
+      ease: Power3.out,
+      scrollTrigger: {
+        trigger: "#prepa",
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      }
+    })
+    gsap.from("#prepa > p", {
+      autoAlpha: 0,
+      y: 60,
+      duration: 0.8,
+      delay: 0.2,
+      ease: Power3.out,
+      scrollTrigger: {
+        trigger: "#prepa",
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      }
+    })
+    // Degree section
+    gsap.from("#degree > h1", {
+      autoAlpha: 0,
+      y: 60,
+      duration: 0.8,
+      ease: Power3.out,
+      scrollTrigger: {
+        trigger: "#degree",
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      }
+    })
+    gsap.from("#degree > p", {
+      autoAlpha: 0,
+      y: 60,
+      duration: 0.8,
+      delay: 0.2,
+      ease: Power3.out,
+      scrollTrigger: {
+        trigger: "#degree",
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      }
+    })
 
     //pokemon scene  
     pokemon
@@ -330,46 +330,46 @@ export default function Home() {
 
         }
       })
-      skills.from("#skillsHeader", {
-        autoAlpha: 0,
-        rotationX: 90,
-        transformOrigin: '50% 50% -150px',
-        ease: Power3.easeInOut,
-        scrollTrigger: {
-          trigger: skillsRef.current,
-          start: "top center",
-          end: "+=200px",
-          scrub: true,
-          toggleActions: "play, reverse, play,reverse",
+    skills.from("#skillsHeader", {
+      autoAlpha: 0,
+      rotationX: 90,
+      transformOrigin: '50% 50% -150px',
+      ease: Power3.easeInOut,
+      scrollTrigger: {
+        trigger: skillsRef.current,
+        start: "top center",
+        end: "+=200px",
+        scrub: true,
+        toggleActions: "play, reverse, play,reverse",
 
-        }
-      })
-      skills.from('.skillF', {
-        opacity: 0,
-        y: 40,
-        stagger: { each: 1 },
-        duration: 1.2,
-        scrollTrigger: {
-          trigger: '#frontend',
-          start: 'center center',
-          end: '+=110px',
-          scrub: true,
-          toggleActions: "play, reverse, play,reverse",
-        }
-      })
-      skills.from('.skillB', {
-        opacity: 0,
-        y: 40,
-        stagger: { each: 1 },
-        duration: 1.2,
-        scrollTrigger: {
-          trigger: '#frontend',
-          start: 'bottom center',
-          end: '+=40px',
-          scrub: true,
-          toggleActions: "play, reverse, play,reverse",
-        }
-      })
+      }
+    })
+    skills.from('.skillF', {
+      opacity: 0,
+      y: 40,
+      stagger: { each: 1 },
+      duration: 1.2,
+      scrollTrigger: {
+        trigger: '#frontend',
+        start: 'center center',
+        end: '+=110px',
+        scrub: true,
+        toggleActions: "play, reverse, play,reverse",
+      }
+    })
+    skills.from('.skillB', {
+      opacity: 0,
+      y: 40,
+      stagger: { each: 1 },
+      duration: 1.2,
+      scrollTrigger: {
+        trigger: '#frontend',
+        start: 'bottom center',
+        end: '+=40px',
+        scrub: true,
+        toggleActions: "play, reverse, play,reverse",
+      }
+    })
 
   }, [])
   return (
@@ -392,43 +392,43 @@ export default function Home() {
         </div>
       </section>
       <section id="experience" className="section">
-          <div className="gap"></div>
+        <div className="gap"></div>
 
-          <h1 >Experience<span className="-primary">.all()</span></h1>
+        <h1 >Experience<span className="-primary">.all()</span></h1>
 
-          <div className={styles.experience}>
-            <div className={styles.experienceItem}>
-              <h2>Frontend Developer <span className="-primary">@ Quickext</span></h2>
-              <p className="-gray">Nov 2023 – Present | Sousse, Tunisia</p>
-              <ul>
-                <li>Collaborated with a cross-functional team to develop a high-performance, scalable version of the product using Micro-Frontends, enhancing modularity and maintainability</li>
-                <li>Contributed to and optimized a high-performance widget deployed across 2,000+ client websites, ensuring cross-browser compatibility and improving load time by 20%</li>
-                <li>Performed unit tests and ensured great coverage across all modules</li>
-                <li>Communicated with the design team to detect design flaws and ensure seamless user experience</li>
-              </ul>
-            </div>
-
-            <div className={styles.experienceItem}>
-              <h2>Frontend Developer <span className="-primary">@ MENTZ GmbH</span></h2>
-              <p className="-gray">Apr 2023 – Nov 2023 | Sousse, Tunisia</p>
-              <ul>
-                <li>Implemented new features and interfaces for large scale public transportation projects</li>
-                <li>Worked closely with project managers and developers to identify and resolve technical challenges, ensuring seamless feature implementation and system stability</li>
-                <li>Collaborated with team members to understand and translate client requirements into scalable and robust code</li>
-              </ul>
-            </div>
-
-            <div className={styles.experienceItem}>
-              <h2>Frontend Developer <span className="-primary">@ Nxtya Agency</span></h2>
-              <p className="-gray">Sep 2022 – Apr 2023 | Monastir, Tunisia</p>
-              <ul>
-                <li>Developed the frontend for a high-performance server-side application, ensuring seamless responsiveness across various screen sizes and devices</li>
-                <li>Rebuilt and optimized a website, significantly improving performance and user experience within a tight deadline</li>
-                <li>Participated in all software development lifecycle phases from initial concept to maintenance</li>
-              </ul>
-            </div>
+        <div className={styles.experience}>
+          <div className={styles.experienceItem}>
+            <h2>Frontend Developer <span className="-primary">@ Quickext</span></h2>
+            <p className="-gray">Nov 2023 – Present | Sousse, Tunisia</p>
+            <ul>
+              <li>Collaborated with a cross-functional team to develop a high-performance, scalable version of the product using Micro-Frontends, enhancing modularity and maintainability</li>
+              <li>Contributed to and optimized a high-performance widget deployed across 2,000+ client websites, ensuring cross-browser compatibility and improving load time by 20%</li>
+              <li>Performed unit tests and ensured great coverage across all modules</li>
+              <li>Communicated with the design team to detect design flaws and ensure seamless user experience</li>
+            </ul>
           </div>
-        </section>
+
+          <div className={styles.experienceItem}>
+            <h2>Frontend Developer <span className="-primary">@ MENTZ GmbH</span></h2>
+            <p className="-gray">Apr 2023 – Nov 2023 | Sousse, Tunisia</p>
+            <ul>
+              <li>Implemented new features and interfaces for large scale public transportation projects</li>
+              <li>Worked closely with project managers and developers to identify and resolve technical challenges, ensuring seamless feature implementation and system stability</li>
+              <li>Collaborated with team members to understand and translate client requirements into scalable and robust code</li>
+            </ul>
+          </div>
+
+          <div className={styles.experienceItem}>
+            <h2>Frontend Developer <span className="-primary">@ Nxtya Agency</span></h2>
+            <p className="-gray">Sep 2022 – Apr 2023 | Monastir, Tunisia</p>
+            <ul>
+              <li>Developed the frontend for a high-performance server-side application, ensuring seamless responsiveness across various screen sizes and devices</li>
+              <li>Rebuilt and optimized a website, significantly improving performance and user experience within a tight deadline</li>
+              <li>Participated in all software development lifecycle phases from initial concept to maintenance</li>
+            </ul>
+          </div>
+        </div>
+      </section>
       <section id="education" className="section">
         <div className="gap"></div>
 
@@ -449,7 +449,7 @@ export default function Home() {
       </section>
       <div className="gap"></div>
 
-    {/*   <section ref={pokemonRef} id={styles.pokemon}>
+      {/*   <section ref={pokemonRef} id={styles.pokemon}>
         <div ref={tilesRef} id={styles.tiles}></div>
         <div ref={ashRef} id={styles.ash}>
           <Image src={ash} layout="fill" alt="tiles" ></Image>
@@ -481,15 +481,15 @@ export default function Home() {
 
         </div>
       </section> */}
-      <div 
-   //   className={styles.hidden}
-       ref={hiddenSection}>
+      <div
+        //   className={styles.hidden}
+        ref={hiddenSection}>
 
         <section ref={skillsRef} id={styles.skills} className="section">
           <div className="gap"></div>
           <h1 id="skillsHeader" className="-primary">Skills</h1>
           <div id="frontend" className={styles.skillsWrapper} >
-          <div className="skillF" > <Image src={nextLogo} layout="responsive" alt="nextjs" ></Image>
+            <div className="skillF" > <Image src={nextLogo} layout="responsive" alt="nextjs" ></Image>
               <p>Next js</p>
             </div>
             <div className="skillF"> <Image src={reactLogo} layout="responsive" alt="react" ></Image>
@@ -502,7 +502,7 @@ export default function Home() {
               <p>Redux</p>
             </div>
 
-        
+
           </div>
           <div className="gap"></div>
 
@@ -521,16 +521,11 @@ export default function Home() {
               <p>PostgreSQL</p>
 
             </div>
-        
-            
           </div>
         </section>
-
-    
-
         <section className="section">
           <h1>Check out my <br></br> <span className="-primary work-link"><Link href="/work">selected works</Link> </span>
- for more details.</h1>
+            for more details.</h1>
         </section>
       </div>
 
