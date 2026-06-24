@@ -74,11 +74,14 @@ body {
       filter: brightness(1.4);
     }
   }
-  .work-link{
-    a{
+  .work-link {
+    a {
       text-decoration: underline !important;
-      
     }
+  }
+  &#education {
+    min-height: auto !important;
+    margin-top: 100px;
   }
 }
 #progress {

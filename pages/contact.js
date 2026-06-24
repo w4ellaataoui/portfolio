@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Head from 'next/head'
 import Image from 'next/image'
 import { gsap, Power3 } from "gsap"
@@ -6,6 +6,7 @@ import { gsap, Power3 } from "gsap"
 import styles from '../styles/Contact.module.scss'
 import ProgressBar from "../components/ProgressBar"
 export default function Contact() {
+    const [status, setStatus] = useState(null);
     const timeline = gsap.timeline({
         delay: 0.2
     })
@@ -29,6 +30,28 @@ export default function Contact() {
 
     }, [])
 
+    async function handleSubmit(e) {
+        e.preventDefault();
+        setStatus("sending");
+        const form = e.target;
+        const data = {
+            subject: form.elements["_subject"].value,
+            email: form.elements["email"].value,
+            message: form.elements["message"].value,
+        };
+        const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        });
+        if (res.ok) {
+            setStatus("sent");
+            form.reset();
+        } else {
+            setStatus("error");
+        }
+    }
+
     return (
         <div className={styles.backgroundWrapper}>
             <div className={`${styles.bottom} container`} >
@@ -51,14 +74,17 @@ export default function Contact() {
                         <span > Download my </span> <a id={styles.btn} target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1WpxIYWI9ghv1l3wPkw9YfWqGc-JyQ0NP/view?usp=sharing"> resume
                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" ><path fill="none" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" d="M8 11.4l3.3-2.9m-6.6 0L8 11.4V.5M.5 10.8v4.7h15v-4.7"></path></svg> </a>
                     </div>
-                    <form id={styles.contactForm} action="https://formsubmit.co/laataouiwael@gmail.com" method="POST" >
+                    <form id={styles.contactForm} onSubmit={handleSubmit}>
                         <input
                             type="text" name="_subject" required placeholder="Subject" />
                         <input
                             type="email" name="email" required placeholder="Email Address" />
                         <textarea name="message" required placeholder="Enter your message" cols="30" rows="10"></textarea>
-                        <button type="submit">Send</button>
-
+                        <button type="submit" disabled={status === "sending"}>
+                            {status === "sending" ? "Sending..." : "Send"}
+                        </button>
+                        {status === "sent" && <p>Message sent successfully!</p>}
+                        {status === "error" && <p>Something went wrong. Please try again.</p>}
                     </form>
 
                 </section>

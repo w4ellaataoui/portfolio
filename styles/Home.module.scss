@@ -120,7 +120,7 @@
 }
 #skills {
   padding-top: 50px;
-  padding-bottom: 150px;
+  padding-bottom: 70px;
   h1 {
     padding-bottom: 25px;
   }
@@ -144,6 +144,35 @@
         margin: 23px 10px;
       }
     }
+  }
+  .skillCategoryLabel {
+    font-size: 0.7rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 20px 0 10px;
+  }
+  .skillTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+    .tag {
+      font-size: 0.75rem;
+      padding: 4px 14px;
+      border: 1px solid rgba(104, 42, 233, 0.4);
+      border-radius: 20px;
+      color: var(--gray);
+      transition: all 0.2s ease;
+      cursor: default;
+      &:hover {
+        border-color: var(--purple);
+        color: var(--purple);
+      }
+    }
+  }
+  .toolsSection {
+    margin-top: 40px;
   }
   @media (max-width: 750px) {
     padding-bottom: 50px;
