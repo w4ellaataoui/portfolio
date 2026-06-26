@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 25px;
+  margin: 45px 0;
   .projectImage {
     @media (max-width: 750px) {
       width: 50%;
@@ -37,7 +38,7 @@
   }
   @media (max-width: 750px) {
     flex-direction: column;
-    padding: 20px 0;
+    padding: 20px 10px;
     .details {
       width: 100%;
     }
